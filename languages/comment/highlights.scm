@@ -5,9 +5,11 @@
   ("(" @constant.comment.todo.bracket
     (user) @constant.comment.todo.user
     ")" @constant.comment.todo.bracket)?
-  ((prefix)? @constant.comment.todo.prefix
-   (text)? @constant.comment.todo.text)*)
-  (#match? @constant.comment.todo "^(TODO|WIP|QUESTION|QUESTIONS|IDEA|TEMP|TEMPORARY|\\?)$"))
+  (
+    (prefix)? @constant.comment.todo.prefix
+    (text)? @constant.comment.todo.text)*
+  )
+  (#match? @constant.comment.todo "^(TODO|WIP|MAYBE|QUESTION|QUESTIONS|IDEA|TEMP|TEMPORARY|\\?)$"))
 
 ; NOTE, INFO, DOCS — informational
 ((tag
@@ -16,9 +18,11 @@
   ("(" @string.comment.info.bracket
     (user) @string.comment.info.user
     ")" @string.comment.info.bracket)?
-  ((prefix)? @string.comment.info.prefix
-   (text)? @string.comment.info.text)*)
-  (#match? @string.comment.info "^(NOTE|INFO|DOCS|PERF|OPTIMIZE|PERFORMANCE|SAFETY|INVARIANT|\\*)$"))
+  (
+    (prefix)? @string.comment.info.prefix
+    (text)? @string.comment.info.text)*
+  )
+  (#match? @string.comment.info "^(NOTE|XXX|INFO|DOCS|PERF|OPTIMIZE|PERFORMANCE|SAFETY|INVARIANT|TEST|\\*)$"))
 
 ; FIXME, BUG, ERROR — broken, must be fixed
 ((tag
@@ -27,9 +31,11 @@
   ("(" @property.comment.error.bracket
     (user) @property.comment.error.user
     ")" @property.comment.error.bracket)?
-  ((prefix)? @property.comment.error.prefix
-   (text)? @property.comment.error.text)*)
-  (#match? @property.comment.error "^(FIXME|BUG|ERROR|ISSUE|DEPRECATED|!)$"))
+  (
+    (prefix)? @property.comment.error.prefix
+    (text)? @property.comment.error.text)*
+  )
+  (#match? @property.comment.error "^(FIXME|BUG|ERROR|ISSUE|DEPRECATED|DELETE|!)$"))
 
 ; HACK, WARNING, WARN — fragile or workaround
 ((tag
@@ -38,6 +44,8 @@
   ("(" @keyword.comment.warn.bracket
     (user) @keyword.comment.warn.user
     ")" @keyword.comment.warn.bracket)?
-  ((prefix)? @keyword.comment.warn.prefix
-   (text)? @keyword.comment.warn.text)*)
+  (
+    (prefix)? @keyword.comment.warn.prefix
+    (text)? @keyword.comment.warn.text)*
+  )
   (#match? @keyword.comment.warn "^(HACK|WARNING|WARN|FIX|SAFETY|XXX|#)$"))

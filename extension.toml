@@ -1,0 +1,11 @@
+id = "todo-highlight"
+name = "TODO Highlight"
+version = "0.1.0"
+schema_version = 1
+authors = ["Saad Mazhar"]
+description = "Highlights TODO, FIXME, and other comment annotations"
+repository = "https://github.com/saadmazhar/TODO-highlight"
+
+[grammars.comment]
+repository = "https://github.com/stsewd/tree-sitter-comment"
+rev = "66272d2b6c73fb61157541b69dd0a7ce7b42a5ad"

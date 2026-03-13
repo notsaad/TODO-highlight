@@ -4,25 +4,49 @@ A [Zed](https://zed.dev) extension that highlights `TODO`, `FIXME`, and other co
 
 ## Supported Keywords
 
-| Keyword | Highlight | Examples |
+| Keyword | Capture | Color |
 |---|---|---|
-| `TODO`, `WIP`, `QUESTION`, `IDEA`, `TEMP` | `@comment.todo` (yellow) | `// TODO: implement this` |
-| `FIXME`, `BUG`, `ERROR`, `ISSUE`, `DEPRECATED` | `@comment.error` (red) | `// FIXME: crashes on nil` |
-| `HACK`, `WARNING`, `WARN`, `XXX` | `@comment.warning` (orange) | `// HACK: temporary workaround` |
-| `NOTE`, `INFO`, `DOCS`, `PERF`, `SAFETY` | `@comment.note` (blue) | `// NOTE: see RFC 1234` |
-
-Usernames in annotations are highlighted as `@variable`:
-```
-// FIXME(saad): this needs revisiting
-```
-
-URLs in comments are highlighted as `@string.special.url`.
+| `TODO`, `WIP`, `MAYBE`, `QUESTION`, `IDEA`, `TEMP` | `@constant.comment.todo` | Yellow |
+| `FIXME`, `BUG`, `ERROR`, `ISSUE`, `DEPRECATED`, `DELETE` | `@property.comment.error` | Red |
+| `HACK`, `WARNING`, `WARN`, `FIX`, `SAFETY`, `XXX` | `@keyword.comment.warn` | Orange |
+| `NOTE`, `INFO`, `DOCS`, `PERF`, `TEST`, `INVARIANT` | `@string.comment.info` | Blue |
 
 ## How It Works
 
-This is a grammar-only Zed extension — no Rust or compilation required. It uses the [`tree-sitter-comment`](https://github.com/stsewd/tree-sitter-comment) grammar, which Zed automatically injects into comment nodes of all supported languages (Rust, JavaScript, Python, Go, etc.).
+This is a grammar-only Zed extension — no Rust or compilation required. It uses the [`tree-sitter-comment`](https://github.com/thedadams/tree-sitter-comment) grammar, which Zed automatically injects into comment nodes of all supported languages (Rust, JavaScript, Python, Go, C++, etc.).
 
-The highlight colors depend on your active theme's support for the capture names above. Most built-in Zed themes support at least `@comment.todo`.
+## Background Highlight (Optional)
+
+By default, only the keyword text is colored. To get a **colored background box** around keywords, add this to your Zed `settings.json`:
+
+```json
+{
+  "experimental.theme_overrides": {
+    "syntax": {
+      "constant.comment.todo": {
+        "color": "#FACC15",
+        "background_color": "#FACC1533",
+        "font_weight": 700
+      },
+      "property.comment.error": {
+        "color": "#EF4444",
+        "background_color": "#EF444433",
+        "font_weight": 700
+      },
+      "string.comment.info": {
+        "color": "#3B82F6",
+        "background_color": "#3B82F633",
+        "font_weight": 700
+      },
+      "keyword.comment.warn": {
+        "color": "#F97316",
+        "background_color": "#F9731633",
+        "font_weight": 700
+      }
+    }
+  }
+}
+```
 
 ## Installation
 

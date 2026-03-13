@@ -1,15 +1,15 @@
-; TODO, WIP, QUESTION — needs attention, in-progress
+; TODO family — needs attention, in-progress
 ((tag (name) @constant.comment.todo)
-  (#match? @constant.comment.todo "^(TODO|WIP|MAYBE|QUESTION|QUESTIONS|IDEA|TEMP|TEMPORARY|\\?)$"))
+  (#match? @constant.comment.todo "^(TODO|WIP|MAYBE|QUESTION|IDEA|TEMP|\\?)$"))
 
-; NOTE, INFO, DOCS — informational
+; NOTE family — informational
 ((tag (name) @string.comment.info)
-  (#match? @string.comment.info "^(NOTE|XXX|INFO|DOCS|PERF|OPTIMIZE|PERFORMANCE|SAFETY|INVARIANT|TEST|\\*)$"))
+  (#match? @string.comment.info "^(NOTE|INFO|DOCS|PERF|TEST|\\*)$"))
 
-; FIXME, BUG, ERROR — broken, must be fixed
+; FIXME family — broken, must be fixed
 ((tag (name) @property.comment.error)
-  (#match? @property.comment.error "^(FIXME|BUG|ERROR|ISSUE|DEPRECATED|DELETE|!)$"))
+  (#match? @property.comment.error "^(FIXME|BUG|ERROR|DEPRECATED|DELETE|!)$"))
 
-; HACK, WARNING, WARN — fragile or workaround
+; HACK family — fragile, workaround, or warning
 ((tag (name) @keyword.comment.warn)
-  (#match? @keyword.comment.warn "^(HACK|WARNING|WARN|FIX|SAFETY|XXX|#)$"))
+  (#match? @keyword.comment.warn "^(HACK|WARNING|WARN|XXX|SAFETY|FIX|#)$"))

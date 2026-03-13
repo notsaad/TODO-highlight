@@ -1,15 +1,15 @@
 # TODO Highlight
 
-A [Zed](https://zed.dev) extension that highlights `TODO`, `FIXME`, and other comment annotations — inspired by the popular VSCode `vscode-todo-highlight` extension.
+A [Zed](https://zed.dev) extension that highlights `TODO`, `FIXME`, and other comment annotations.
 
 ## Supported Keywords
 
-| Keyword | Capture | Color |
-|---|---|---|
-| `TODO`, `WIP`, `MAYBE`, `QUESTION`, `IDEA`, `TEMP` | `@constant.comment.todo` | Yellow |
-| `FIXME`, `BUG`, `ERROR`, `ISSUE`, `DEPRECATED`, `DELETE` | `@property.comment.error` | Red |
-| `HACK`, `WARNING`, `WARN`, `FIX`, `SAFETY`, `XXX` | `@keyword.comment.warn` | Orange |
-| `NOTE`, `INFO`, `DOCS`, `PERF`, `TEST`, `INVARIANT` | `@string.comment.info` | Blue |
+| Group | Keywords | Capture | Color |
+|---|---|---|---|
+| Todo | `TODO`, `WIP`, `MAYBE`, `QUESTION`, `IDEA`, `TEMP`, `?` | `@constant.comment.todo` | Yellow |
+| Error | `FIXME`, `BUG`, `ERROR`, `DEPRECATED`, `DELETE`, `!` | `@property.comment.error` | Red |
+| Warning | `HACK`, `WARNING`, `WARN`, `XXX`, `SAFETY`, `FIX`, `#` | `@keyword.comment.warn` | Orange |
+| Info | `NOTE`, `INFO`, `DOCS`, `PERF`, `TEST`, `*` | `@string.comment.info` | Blue |
 
 ## How It Works
 
@@ -60,3 +60,7 @@ Open Zed → `Extensions` → search for "TODO Highlight" → Install.
 ## Languages Supported
 
 Anywhere Zed injects the `comment` grammar — which includes all major languages out of the box.
+
+## License
+
+[MIT](LICENSE)

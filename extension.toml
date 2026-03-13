@@ -7,5 +7,5 @@ description = "Highlights TODO, FIXME, and other comment annotations"
 repository = "https://github.com/saadmazhar/TODO-highlight"
 
 [grammars.comment]
-repository = "https://github.com/stsewd/tree-sitter-comment"
-rev = "66272d2b6c73fb61157541b69dd0a7ce7b42a5ad"
+repository = "https://github.com/thedadams/tree-sitter-comment"
+rev = "c16c22e4d72ece9a8c1da5a128fa20088e063275"

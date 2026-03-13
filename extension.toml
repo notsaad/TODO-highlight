@@ -4,7 +4,7 @@ version = "0.1.0"
 schema_version = 1
 authors = ["Saad Mazhar"]
 description = "Highlights TODO, FIXME, and other comment annotations"
-repository = "https://github.com/saadmazhar/TODO-highlight"
+repository = "https://github.com/notsaad/TODO-highlight"
 
 [grammars.comment]
 repository = "https://github.com/thedadams/tree-sitter-comment"

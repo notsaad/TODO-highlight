@@ -1,6 +1,6 @@
 # TODO Highlight
 
-A [Zed](https://zed.dev) extension that highlights `TODO`, `FIXME`, and other comment annotations.
+A [Zed](https://zed.dev) extension that highlights `TODO`, `FIXME`, and other comment annotations, but leaves the rest of the comment unhighlighted.
 
 ## Supported Keywords
 
